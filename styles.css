@@ -1,0 +1,81 @@
+/* Reset básico */
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #004d40;
+    color: #fff;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 1rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffa726;
+}
+
+/* Botão doador */
+.doador-button {
+    background-color: #ffa726;
+    color: #000;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.doador-button:hover {
+    background-color: #ff9800;
+}
+
+/* Seções */
+main {
+    padding: 2rem;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+h1, h2 {
+    color: #004d40;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #004d40;
+    color: #fff;
+    margin-top: 2rem;
+}
