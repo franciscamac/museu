@@ -9,16 +9,22 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
+    padding-top: 60px; /* Para garantir que o conteúdo não fique oculto atrás do menu fixo */
 }
 
-/* Cabeçalho */
+/* Cabeçalho fixo */
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #004d40;
+    color: #fff;
+    padding: 1rem 2rem;
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    background-color: #004d40;
-    color: #fff;
 }
 
 header .logo {
@@ -57,12 +63,79 @@ header .logo {
 .doador-button:hover {
     background-color: #ff9800;
 }
+/* Estilo para a seção de Eventos */
+#eventos {
+    background-color: #f1f1f1;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+#eventos h2 {
+    color: #004d40;
+    margin-bottom: 1rem;
+}
+
+#eventos button {
+    background-color: #004d40;
+    color: white;
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#eventos button:hover {
+    background-color: #ffa726;
+}
+
+#eventos ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#eventos li {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#eventos li strong {
+    color: #004d40;
+    margin-left: 1rem;
+}
+
+.event-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Esconder os eventos passados inicialmente */
+#past-events {
+    display: none;
+}
+
+
+/* Esconder os eventos passados inicialmente */
+#past-events {
+    display: none;
+}
+
+
 
 /* Seções */
 main {
     padding: 2rem;
 }
 
+/* Seção do conteúdo */
 section {
     margin-bottom: 3rem;
 }

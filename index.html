@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MUHNAP</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        function toggleEvents(type) {
+            const futureEvents = document.getElementById('future-events');
+            const pastEvents = document.getElementById('past-events');
+
+            if (type === 'future') {
+                futureEvents.style.display = 'block';
+                pastEvents.style.display = 'none';
+            } else {
+                futureEvents.style.display = 'none';
+                pastEvents.style.display = 'block';
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -14,9 +28,10 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#colecoes">Coleções</a></li>
+                <li><a href="#eventos">Eventos</a></li>
                 <li><a href="#contato">Contato</a></li>
-                <li><a href="#seja-doador" class="doador-button">Seja Doador</a></li>
-            </ul>
+                <li><a href="doacao.html" class="doador-button">Seja Doador</a></li> <!-- Redirecionamento para a página de doação -->
+         </ul>
         </nav>
     </header>
 
@@ -43,6 +58,52 @@
             <h2>Coleções</h2>
             <p>Confira nossas coleções de artefatos históricos, obras de arte e exposições especiais.</p>
         </section>
+        <section id="eventos">
+            <h2>Eventos</h2>
+            <p>Fique por dentro dos eventos futuros e das atividades culturais organizadas pelo nosso museu. Não perca a oportunidade de participar!</p>
+
+            <!-- Botões para alternar entre eventos futuros e passados -->
+            <button onclick="toggleEvents('future')">Eventos Futuros</button>
+            <button onclick="toggleEvents('past')">Eventos Passados</button>
+
+            <!-- Lista de Eventos Futuros -->
+            <div id="future-events">
+                <h3>Eventos Futuros</h3>
+                <ul>
+                    <li>
+                        <img src="images/evento-fosseis.jpg" alt="Exposição de Fósseis" class="event-image">
+                        <strong>Exposição de Fósseis</strong> - 10 de Janeiro a 20 de Fevereiro
+                    </li>
+                    <li>
+                        <img src="images/seminario-ambiental.jpg" alt="Seminário Ambiental" class="event-image">
+                        <strong>Seminário Ambiental</strong> - 5 de Março
+                    </li>
+                    <li>
+                        <img src="images/oficina-arte-ecologica.jpg" alt="Oficina de Arte Ecológica" class="event-image">
+                        <strong>Oficina de Arte Ecológica</strong> - 15 de Abril
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Lista de Eventos Passados -->
+            <div id="past-events" style="display: none;">
+                <h3>Eventos Passados</h3>
+                <ul>
+                    <li>
+                        <img src="images/exposicao-dinossauros.jpg" alt="Exposição de Dinossauros" class="event-image">
+                        <strong>Exposição de Dinossauros</strong> - 10 de Julho a 15 de Agosto (2023)
+                    </li>
+                    <li>
+                        <img src="images/conferencia-sustentabilidade.jpg" alt="Conferência sobre Sustentabilidade" class="event-image">
+                        <strong>Conferência sobre Sustentabilidade</strong> - 1 de Outubro (2022)
+                    </li>
+                    <li>
+                        <img src="images/festival-cultural.jpg" alt="Festival Cultural do Vale" class="event-image">
+                        <strong>Festival Cultural do Vale</strong> - 20 de Dezembro (2022)
+                    </li>
+                </ul>
+            </div>
+        </section>
 
         <section id="contato">
             <h2>Contato</h2>
@@ -56,7 +117,7 @@
         <section id="seja-doador">
             <h2>Seja um Doador</h2>
             <p>Ajude a manter o museu funcionando. Faça sua doação agora mesmo!</p>
-            <button onclick="alert('Obrigado por doar!')">Seja Doador</button>
+            <a href="doacao.html"><button>Seja Doador</button></a> <!-- Link para a nova página -->
         </section>
     </main>
 
