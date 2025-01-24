@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exposições - MUHNAP</title>
+    <link rel="stylesheet" href="exposicao-styles.css">
+</head>
+<body>
+    <h2>Exposições</h2>
+    <p>Explore nossas exposições e descubra a riqueza histórica e ambiental do Vale do Parnaíba.</p>
+
+    <div class="exposicoes-list">
+        <!-- Exposição 1 -->
+        <div class="exposicao-card">
+            <h3>Visita ao MUHNAP na 19ª Semana Nacional dos Museus</h3>
+            <p>Como parte das comemorações da 19 Semana Nacional dos Museus, organizado pelo MUHNAP, em Duque Bacelar, entre os dias 19 e 21 de Maio de 2021, recebemos
+                visitas de alguns alunos do 7°, 8° e 9° ano da Escola Euzamar Machado.</p>
+            <p>Devido a pandemia o numero de alunos foi bem reduzido , mas todos seguindo os protocolos de higienização e uso de máscara. </p>
+            <p>A equipe de alunos foram acompanhados pela professora Renata Dourizete, sendo recebidos no Museu pelo Curador, Francisco Carlos Machado e o Vice-Diretor  Raimundo Vaz,
+                que atráves dos acervos deram aulas de história natural, paleontologia, minerologia, e sobre o mosquito do calazar. </p>
+            <!-- Carrossel -->
+            <div class="carrossel">
+                <div class="carrossel-container">
+                    <img class="carrossel-item" src="img/exposicoes01/foto02.jpg" alt="Fóssil 1">
+                    <img class="carrossel-item" src="img/exposicoes01/foto03.jpg" alt="Fóssil 2">
+                    <img class="carrossel-item" src="img/exposicoes01/foto04.jpg" alt="Fóssil 3">
+                </div>
+                <button class="prev" onclick="moveCarrossel(this, -1)">&#10094;</button>
+                <button class="next" onclick="moveCarrossel(this, 1)">&#10095;</button>
+            </div>
+        </div>
+
+        <!-- Exposição 2 -->
+        <div class="exposicao-card">
+            <h3>Minerais Raros</h3>
+            <p>Explore amostras de minerais raros que revelam a geologia única da nossa região...</p>
+            
+            <!-- Carrossel -->
+            <div class="carrossel">
+                <div class="carrossel-container">
+                    <img class="carrossel-item" src="mineral1.jpg" alt="Mineral 1">
+                    <img class="carrossel-item" src="mineral2.jpg" alt="Mineral 2">
+                    <img class="carrossel-item" src="mineral3.jpg" alt="Mineral 3">
+                </div>
+                <button class="prev" onclick="moveCarrossel(this, -1)">&#10094;</button>
+                <button class="next" onclick="moveCarrossel(this, 1)">&#10095;</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
