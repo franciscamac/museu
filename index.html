@@ -18,6 +18,60 @@
                 pastEvents.style.display = 'block';
             }
         }
+         // Script para o slideshow
+         document.addEventListener('DOMContentLoaded', function() {
+            let slideIndex = 0;
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.dot');
+            
+            function showSlides() {
+                // Esconde todos os slides
+                slides.forEach(slide => {
+                    slide.classList.remove('active');
+                });
+                
+                // Remove a classe active de todos os dots
+                dots.forEach(dot => {
+                    dot.classList.remove('active');
+                });
+                
+                // Incrementa o índice e verifica se passou do último slide
+                slideIndex++;
+                if (slideIndex > slides.length) {
+                    slideIndex = 1;
+                }
+                
+                // Mostra o slide atual
+                slides[slideIndex-1].classList.add('active');
+                dots[slideIndex-1].classList.add('active');
+                
+                // Muda de slide a cada 5 segundos
+                setTimeout(showSlides, 5000);
+            }
+            
+            // Inicia o slideshow
+            showSlides();
+            
+            // Adiciona evento de clique nos dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    // Esconde todos os slides
+                    slides.forEach(slide => {
+                        slide.classList.remove('active');
+                    });
+                    
+                    // Remove a classe active de todos os dots
+                    dots.forEach(d => {
+                        d.classList.remove('active');
+                    });
+                    
+                    // Mostra o slide selecionado
+                    slides[index].classList.add('active');
+                    dot.classList.add('active');
+                    slideIndex = index;
+                });
+            });
+        });
     </script>
 </head>
 <body>
@@ -44,6 +98,37 @@
                 história natural e ambiental da região. Com uma vasta coleção de fósseis, amostras minerais, flora e fauna, 
                 o museu busca conscientizar a população sobre a importância da conservação do meio ambiente e da biodiversidade.
             </p>
+            
+            <!-- Slideshow de imagens -->
+            <div class="slideshow-container">
+                <div class="slide active">
+                    <img src="img/exterior-museu.jpg" alt="Exterior do Museu">
+                    <div class="slide-caption">Visite nossas instalações</div>
+                </div>
+                
+                <div class="slide">
+                    <img src="img/parnaiba.jpg" alt="Rio Parnaiba">
+                    <div class="slide-caption">Rio Parnaiba</div>
+                </div>
+                
+                <div class="slide">
+                    <img src="img/passaros-parnaiba.jpg" alt="Passaros No Rio Parnaiba">
+                    <div class="slide-caption">Passaros No Rio Parnaiba</div>
+                </div>
+                
+                <div class="slide">
+                    <img src="img/visita-escolar.jpg" alt="Visita Escolar">
+                    <div class="slide-caption">Programas educativos para escolas</div>
+                </div>
+                
+                <div class="dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+            
             <p>
                 Visite-nos para explorar exposições interativas, projetos educativos e eventos culturais que destacam 
                 a riqueza histórica e ambiental do Vale do Parnaíba. Juntos, podemos aprender e proteger nosso patrimônio natural.
@@ -53,11 +138,12 @@
             <div class="home-buttons">
                 <a href="exposicao.html" class="button">Nossas Exposições</a>
             </div>
-        
-            <!-- Imagem ou Banner -->
-            <div class="home-image">
-                <img src="banner-museu.jpg" alt="Imagem do Museu ou Exposição" />
-            </div>
+        </section>
+
+        <!-- Restante do seu código permanece igual -->
+        <section id="sobre">
+            <!-- ... -->
+        </section>
         </section>
         
 
@@ -112,62 +198,142 @@
             <div class="team-grid">
                 <!-- Card de integrante -->
                 <div class="team-card">
-                    <img src="img/ana.jpg" alt="Foto de Ana Dutra" />
+                    <img src="img/SAMUHNAP/ana.jpg" alt="Foto de Ana Dutra" />
                     <h3>Ana Dutra</h3>
                     <p>Professora</p>
                 </div>
                 <div class="team-card">
-                    <img src="img/Anunciacao.jpg" alt="Foto de Anunciação Castro" />
+                    <img src="img/SAMUHNAP/Anunciacao.jpg" alt="Foto de Anunciação Castro" />
                     <h3>Anunciação Castro</h3>
                     <p>Bacharel em Contabilidade</p>
                 </div>
                 <div class="team-card">
-                    <img src="img/conceicao.jpg" alt="Foto de Conceição Furtado" />
+                    <img src="img/SAMUHNAP/conceicao.jpg" alt="Foto de Conceição Furtado" />
                     <h3>Conceição Furtado</h3>
                     <p>Professora e Administradora</p>
                 </div>
                 <div class="team-card">
-                    <img src="img/diego.jpg" alt="Foto de Diego Aguiar" />
+                    <img src="img/SAMUHNAP/diego.jpg" alt="Foto de Diego Aguiar" />
                     <h3>Diego Aguiar</h3>
                     <p>Físico e Engenheiro Eletricista</p>
                 </div>
                 <div class="team-card">
-                    <img src="img/francisca.jpg" alt="Foto de Francisca Macário" />
+                    <img src="img/SAMUHNAP/francisca.jpg" alt="Foto de Francisca Macário" />
                     <h3>Francisca Macário</h3>
                     <p>Desenvolvedora de Sistemas</p>
                 </div>
                 <div class="team-card">
-                    <img src="img/francisco.jpg" alt="Foto de Francisco Carlos" />
+                    <img src="img/SAMUHNAP/francisco.jpg" alt="Foto de Francisco Carlos" />
                     <h3>Francisco Carlos</h3>
                     <p>Escritor e Poeta</p>
                 </div>
                 
                 <div class="team-card">
-                    <img src="img/hosana.jpg" alt="Foto de Hosana Tavares" />
+                    <img src="img/SAMUHNAP/hosana.jpg" alt="Foto de Hosana Tavares" />
                     <h3>Hosana Tavares</h3>
                     <p>Agente Cultural</p>
                 </div>
                 <div class="team-card">
-                    <img src="img/jose.jpg" alt="Foto de José Ferreira Castro" />
+                    <img src="img/SAMUHNAP/jose.jpg" alt="Foto de José Ferreira Castro" />
                     <h3>José Ferreira Castro</h3>
                     <p>Físico e Professor</p>
                 </div>
                 
                 <div class="team-card">
-                    <img src="img/maria.jpg" alt="Foto de Maria Antonia" />
+                    <img src="img/SAMUHNAP/maria.jpg" alt="Foto de Maria Antonia" />
                     <h3>Maria Antonia</h3>
                     <p>Biologa e Poeta</p>
                 </div>
                 <div class="team-card">
-                    <img src="img/raimundo.jpg" alt="Foto de Raimundo Vaz" />
+                    <img src="img/SAMUHNAP/raimundo.jpg" alt="Foto de Raimundo Vaz" />
                     <h3>Raimundo Vaz</h3>
                     <p>Químico e Professor</p>
                 </div>
                 
                 <div class="team-card">
-                    <img src="img/wellington.jpg" alt="Foto de Willington Monteiro" />
+                    <img src="img/SAMUHNAP/wellington.jpg" alt="Foto de Willington Monteiro" />
                     <h3>Willington Monteiro</h3>
                     <p>Matemático e Professor</p>
+                </div>
+                <div class="team-card">
+                    <img src="img/SAMUHNAP/Toquarto-torres.png" alt="Foto de Torquato Torres" />
+                    <h3>Torquato Torres</h3>
+                    <p>Advogado e Genealogista</p>
+                </div>
+                <div class="team-card">
+                    <img src="img/SAMUHNAP/aliandro-borges.png" alt="Foto de Aliandro Borges" />
+                    <h3>Aliandro Borges</h3>
+                    <p>Químico, Professor e Jornalista</p>
+                </div>
+                <div class="team-card">
+                    <img src="img/SAMUHNAP/denilson-freitas.png" alt="Foto de Denilson Freitas" />
+                    <h3>Denilson Freitas</h3>
+                    <p>Bibliotecário e Gestor Público</p>
+                </div>
+                <div class="team-card">
+                    <img src="img/SAMUHNAP/carlos-junior.png" alt="Foto de Carlos Júnior Machado" />
+                    <h3>Carlos Júnior Machado</h3>
+                    <p>Professor Licenciado em Letras</p>
+                </div>
+                <div class="team-card">
+                    <img src="img/SAMUHNAP/natalia-viana.png" alt="Foto de Natália Viana" />
+                    <h3>Natália Viana</h3>
+                    <p>Professora Licenciada em Letras</p>
+                </div>
+                <div class="team-card">
+                    <img src="img/SAMUHNAP/lucimar-machado.png" alt="Foto de Lucimar Machado" />
+                    <h3>Lucimar Machado</h3>
+                    <p>Químico e Gestor Comercial</p>
+                </div>
+                <div class="team-card">
+                    <img src="img/SAMUHNAP/diana-aguiar.png" alt="Foto de Diana Aguiar" />
+                    <h3>Diana Aguiar</h3>
+                    <p>Professora e Biologa</p>
+                </div>
+                <div class="team-card">
+                    <img src="img/SAMUHNAP/camila-ferreira.png" alt="Foto de Camila Ferreira" />
+                    <h3>Camila Ferreira</h3>
+                    <p>Poeta e Estudante</p>
+                </div>
+                <div class="team-card">
+                    <img src="img/SAMUHNAP/noemi-rocha.png" alt="Foto de Noemi Rocha" />
+                    <h3>Noemi Rocha</h3>
+                    <p>Professora e Missionária Católica</p>
+                </div>
+                <div class="team-card">
+                    <img src="img/SAMUHNAP/paulo-gomes.png" alt="Foto de Paulo Gomes" />
+                    <h3>Paulo Gomes</h3>
+                    <p>Agrônomo e ME. em Ciências</p>
+                </div>
+                <div class="team-card">
+                    <img src="img/SAMUHNAP/antonio-fernando.png" alt="Foto de Antonia Fernando" />
+                    <h3>Antonia Fernando</h3>
+                    <p>Químico e Gestor Comercial</p>
+                </div>
+                <div class="team-card">
+                    <img src="img/SAMUHNAP/gilson-morais.png" alt="Foto de Gilson Morais" />
+                    <h3>Gilson Morais</h3>
+                    <p>Professor e Ambientalista</p>
+                </div>
+                <div class="team-card">
+                    <img src="img/SAMUHNAP/jose-bacelar.png" alt="Foto de José Bacelar" />
+                    <h3>José Bacelar</h3>
+                    <p>Professor Licenciado em Letras</p>
+                </div>
+                <div class="team-card">
+                    <img src="img/SAMUHNAP/venicio-alencar.png" alt="Foto de Venicio Alencar" />
+                    <h3>Venicio Alencar</h3>
+                    <p>Biólogo e Vereador</p>
+                </div>
+                <div class="team-card">
+                    <img src="img/SAMUHNAP/antonia-teixeira.png" alt="Foto de Antônia Texeira" />
+                    <h3>Antônia Texeira</h3>
+                    <p>Bióloga e Professora</p>
+                </div>
+                <div class="team-card">
+                    <img src="img/SAMUHNAP/charle-marques.png" alt="Foto de Charles Marques" />
+                    <h3>Charles Marques</h3>
+                    <p>Professor</p>
                 </div>
             </div>
         </section>
