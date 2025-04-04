@@ -5,74 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MUHNAP</title>
     <link rel="stylesheet" href="styles.css">
-    <script>
-        function toggleEvents(type) {
-            const futureEvents = document.getElementById('future-events');
-            const pastEvents = document.getElementById('past-events');
-
-            if (type === 'future') {
-                futureEvents.style.display = 'block';
-                pastEvents.style.display = 'none';
-            } else {
-                futureEvents.style.display = 'none';
-                pastEvents.style.display = 'block';
-            }
-        }
-         // Script para o slideshow
-         document.addEventListener('DOMContentLoaded', function() {
-            let slideIndex = 0;
-            const slides = document.querySelectorAll('.slide');
-            const dots = document.querySelectorAll('.dot');
-            
-            function showSlides() {
-                // Esconde todos os slides
-                slides.forEach(slide => {
-                    slide.classList.remove('active');
-                });
-                
-                // Remove a classe active de todos os dots
-                dots.forEach(dot => {
-                    dot.classList.remove('active');
-                });
-                
-                // Incrementa o índice e verifica se passou do último slide
-                slideIndex++;
-                if (slideIndex > slides.length) {
-                    slideIndex = 1;
-                }
-                
-                // Mostra o slide atual
-                slides[slideIndex-1].classList.add('active');
-                dots[slideIndex-1].classList.add('active');
-                
-                // Muda de slide a cada 5 segundos
-                setTimeout(showSlides, 5000);
-            }
-            
-            // Inicia o slideshow
-            showSlides();
-            
-            // Adiciona evento de clique nos dots
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    // Esconde todos os slides
-                    slides.forEach(slide => {
-                        slide.classList.remove('active');
-                    });
-                    
-                    // Remove a classe active de todos os dots
-                    dots.forEach(d => {
-                        d.classList.remove('active');
-                    });
-                    
-                    // Mostra o slide selecionado
-                    slides[index].classList.add('active');
-                    dot.classList.add('active');
-                    slideIndex = index;
-                });
-            });
-        });
-    </script>
 </head>
 <body>
     <header>
@@ -85,8 +17,8 @@
                 <li><a href="#eventos">Eventos</a></li>
                 <li><a href="#SAMUHNAP">SAMUHNAP</a></li>
                 <li><a href="#contato">Contato</a></li>
-                <li><a href="doacao.html" class="doador-button">Seja Doador</a></li> <!-- Redirecionamento para a página de doação -->
-         </ul>
+                <li><a href="doacao.html" class="doador-button">Seja Doador</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -140,13 +72,6 @@
             </div>
         </section>
 
-        <!-- Restante do seu código permanece igual -->
-        <section id="sobre">
-            <!-- ... -->
-        </section>
-        </section>
-        
-
         <section id="sobre">
             <h2>Sobre Nós</h2>
             <p>Nosso museu é dedicado a preservar a história e a cultura. Fundado para inspirar gerações futuras, temos orgulho de compartilhar nosso acervo com o mundo.</p>
@@ -156,6 +81,7 @@
             <h2>Coleções</h2>
             <p>Confira nossas coleções de artefatos históricos, obras de arte e exposições especiais.</p>
         </section>
+        
         <section id="eventos">
             <h2>Eventos</h2>
             <p>Fique por dentro dos eventos futuros e das atividades culturais organizadas pelo nosso museu. Não perca a oportunidade de participar!</p>
@@ -167,9 +93,7 @@
             <!-- Lista de Eventos Futuros -->
             <div id="future-events">
                 <h3>Eventos Futuros</h3>
-                <ul>
-                    
-                </ul>
+                <ul></ul>
             </div>
 
             <!-- Lista de Eventos Passados -->
@@ -187,16 +111,18 @@
                 </ul>
             </div>
         </section>
+        
         <section id="SAMUHNAP">
             <h2>SAMUHNAP</h2>
             <div class="logo-text-container">
                 <img src="img/samuhnap.jpg" alt="Logo do SAMUHNAP" class="logo-samuhnap" />
                 <p>Conheça o Coletivo Cultural SAMUHNAP, que apoia o Museu de História Natural e Ambiental do Vale do Parnaíba – MUHNAP! 
                     Atuando com exposições, saraus e iniciativas culturais em várias cidades do Piauí e Maranhão, o coletivo defende a preservação da cultura e da história regional.
-                </div>
+                </p>
+            </div>
             
             <div class="team-grid">
-                <!-- Card de integrante -->
+                <!-- Cards de integrantes (mantenha todos os que você já tem) -->
                 <div class="team-card">
                     <img src="img/SAMUHNAP/ana.jpg" alt="Foto de Ana Dutra" />
                     <h3>Ana Dutra</h3>
@@ -335,11 +261,11 @@
                     <h3>Charles Marques</h3>
                     <p>Professor</p>
                 </div>
+                <!-- ... (todos os outros cards da equipe) ... -->
             </div>
         </section>
-        <section class="exposicoes">
-
-        </section>
+        
+        <section class="exposicoes"></section>
 
         <section id="contato">
             <h2>Contato</h2>
@@ -352,12 +278,137 @@
         <section id="seja-doador">
             <h2>Seja um Doador</h2>
             <p>Ajude a manter o museu funcionando. Faça sua doação agora mesmo!</p>
-            <a href="doacao.html"><button>Seja Doador</button></a> <!-- Link para a nova página -->
+            <a href="doacao.html"><button>Seja Doador</button></a>
         </section>
     </main>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <span class="prev">&#10094;</span>
+        <span class="next">&#10095;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-img" class="lightbox-img" src="" alt="">
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2025 MUHNAP. Todos os direitos reservados.</p>
     </footer>
+    <script>
+        // Variáveis globais
+        let currentSlideIndex = 0;
+        let teamImages = [];
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+        const closeBtn = document.querySelector('.close-lightbox');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+
+        // Funções do Lightbox
+        function updateLightbox() {
+            const currentImage = teamImages[currentSlideIndex];
+            lightboxImg.src = currentImage.src;
+            lightboxImg.alt = currentImage.alt;
+            lightboxCaption.textContent = currentImage.caption;
+        }
+
+        function openLightbox(index) {
+            currentSlideIndex = index;
+            updateLightbox();
+            lightbox.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function navigateSlides(n) {
+            currentSlideIndex += n;
+            
+            if (currentSlideIndex >= teamImages.length) {
+                currentSlideIndex = 0;
+            } else if (currentSlideIndex < 0) {
+                currentSlideIndex = teamImages.length - 1;
+            }
+            
+            updateLightbox();
+        }
+
+        // Event Listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inicializa o array de imagens
+            const teamCards = document.querySelectorAll('.team-card');
+            teamImages = Array.from(teamCards).map(card => {
+                return {
+                    src: card.querySelector('img').src,
+                    alt: card.querySelector('img').alt,
+                    caption: `${card.querySelector('h3').textContent} - ${card.querySelector('p').textContent}`
+                };
+            });
+
+            // Adiciona eventos aos cards
+            teamCards.forEach((card, index) => {
+                card.addEventListener('click', () => openLightbox(index));
+            });
+
+            // Eventos do Lightbox
+            closeBtn.addEventListener('click', closeLightbox);
+            prevBtn.addEventListener('click', () => navigateSlides(-1));
+            nextBtn.addEventListener('click', () => navigateSlides(1));
+
+            // Fechar ao clicar fora
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            // Navegação por teclado
+            document.addEventListener('keydown', function(e) {
+                if (lightbox.style.display === 'block') {
+                    if (e.key === 'Escape') {
+                        closeLightbox();
+                    } else if (e.key === 'ArrowLeft') {
+                        navigateSlides(-1);
+                    } else if (e.key === 'ArrowRight') {
+                        navigateSlides(1);
+                    }
+                }
+            });
+
+            // Seu código existente do slideshow
+            let slideIndex = 0;
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.dot');
+            
+            function showSlides() {
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                slideIndex++;
+                if (slideIndex > slides.length) slideIndex = 1;
+                
+                slides[slideIndex-1].classList.add('active');
+                dots[slideIndex-1].classList.add('active');
+                setTimeout(showSlides, 5000);
+            }
+            
+            showSlides();
+            
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    slides.forEach(slide => slide.classList.remove('active'));
+                    dots.forEach(d => d.classList.remove('active'));
+                    slides[index].classList.add('active');
+                    dot.classList.add('active');
+                    slideIndex = index;
+                });
+            });
+        });
+    </script>
 </body>
 </html>
