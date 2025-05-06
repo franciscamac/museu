@@ -189,3 +189,25 @@ function moveCarrossel(button, step) {
     // Move o carrossel
     container.scrollTo({ left: currentScroll, behavior: 'smooth' });
 }
+
+// Código para alternar navegação
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+// Função para alternar eventos
+function toggleEvents(type) {
+    const futureEvents = document.getElementById('future-events');
+    const pastEvents = document.getElementById('past-events');
+
+    if (type === 'future') {
+        futureEvents.style.display = 'block';
+        pastEvents.style.display = 'none';
+    } else if (type === 'past') {
+        futureEvents.style.display = 'none';
+        pastEvents.style.display = 'block';
+    }
+}

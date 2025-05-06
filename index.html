@@ -12,11 +12,17 @@
         <div class="logo">
             <img src="img/LOGO_MARCA/LOGO_MUHNAP_02.png" alt="Logo do MUHNAP">
         </div>
+        <button class="nav-toggle" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+            
+        </button>
         <nav>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#colecoes">Coleções</a></li>
+            <!--    <li><a href="#colecoes">Coleções</a></li>-->
                 <li><a href="#eventos">Eventos</a></li>
                 <li><a href="#SAMUHNAP">SAMUHNAP</a></li>
                 <li><a href="#contato">Contato</a></li>
@@ -52,23 +58,34 @@
                 <div class="carrossel">
                     <div class="carrossel-container">
                         <div class="carrossel-item">
-                            <img src="img/GERAIS/Prancheta 1.png" alt="Imagem 1">
+                            <img src="img/GERAIS/Prancheta 1.png" alt="Fósseis de gastrópodes">
+                            <div class="description">Fósseis de gastrópodes</div>
                         </div>
                         <div class="carrossel-item">
-                            <img src="img/GERAIS/Prancheta 2.png" alt="Imagem 2">
+                            <img src="img/GERAIS/Prancheta 5.png" alt="Canoas do Rio Parnaíba">
+                            <div class="description">Canoas do Rio Parnaíba</div>
                         </div>
                         <div class="carrossel-item">
                             <img src="img/GERAIS/Prancheta 3.png" alt="Imagem 3">
+                            <div class="description">Fóssil do Sítio São João</div>
                         </div>
                         <div class="carrossel-item">
-                            <img src="img/GERAIS/Prancheta 4.png" alt="Imagem 4">
+                            <img src="img/GERAIS/Prancheta 2.png" alt="Fóssil do Sítio Diva, a Grande">
+                            <div class="description">Fóssil do Sítio Diva, a Grande</div>
                         </div>
                         <div class="carrossel-item">
-                            <img src="img/GERAIS/Prancheta 5.png" alt="Imagem 5">
+                            <img src="img/GERAIS/Prancheta 6.png" alt="Lagoa da Oleria - APA dos Morros Garapenses">
+                            <div class="description">Lagoa da Oleria - APA dos Morros Garapenses</div>
                         </div>
                         <div class="carrossel-item">
-                            <img src="img/GERAIS/Prancheta 6.png" alt="Imagem 6">
+                            <img src="img/GERAIS/Prancheta 4.png" alt="Fóssil do Sítio Diva, a Grande">
+                            <div class="description">Fóssil do Sítio Diva, a Grande</div>
                         </div>
+                        <div class="carrossel-item">
+                            <img src="img/GERAIS/morro_meteoros.jpg" alt="Morro do Meteoro">
+                            <div class="description">Morro do Meteoro</div>
+                        </div>
+                        
                     </div>
                     <!-- Botões de navegação -->
                     <button class="prev">&#10094;</button>
@@ -77,38 +94,53 @@
             </div>
         </section>
 
-        <section id="colecoes">
+        <!--<section id="colecoes">
             <h2>Coleções</h2>
             <p>Confira nossas coleções de artefatos históricos, obras de arte e exposições especiais.</p>
-        </section>
+        </section> -->
         
         <section id="eventos">
             <h2>Eventos</h2>
-            <p>Fique por dentro dos eventos futuros e das atividades culturais organizadas pelo nosso museu. Não perca a oportunidade de participar!</p>
+            <p>Fique por dentro dos eventos futuros e das atividades culturais organizadas pelo nosso museu.</p>
 
-            <!-- Botões para alternar entre eventos futuros e passados -->
-            <button onclick="toggleEvents('future')">Eventos Futuros</button>
-            <button onclick="toggleEvents('past')">Eventos Passados</button>
+            <!-- Contêiner dos eventos -->
+            <div class="eventos-container">
+                <!-- Eventos Futuros -->
+                <div id="future-events" class="event-list">
+                    <h3>Eventos Futuros</h3>
+                    <ul>
+                        <li>
+                            <img src="img/eventos/futuro1.jpg" alt="Evento Futuro 1" class="event-image">
+                            <strong>Exposição de Fósseis</strong> - 15 de Junho
+                        </li>
+                        <li>
+                            <img src="img/eventos/futuro2.jpg" alt="Evento Futuro 2" class="event-image">
+                            <strong>Palestra sobre Biodiversidade</strong> - 20 de Julho
+                        </li>
+                    </ul>
+                </div>
 
-            <!-- Lista de Eventos Futuros -->
-            <div id="future-events">
-                <h3>Eventos Futuros</h3>
-                <ul></ul>
+                <!-- Eventos Passados -->
+                <div id="past-events" class="event-list">
+                    <h3>Eventos Passados</h3>
+                    <ul>
+                        <li>
+                            <img src="img/eventos/passado1.jpg" alt="Evento Passado 1" class="event-image">
+                            <strong>1º Sarau Cultural no Museu Natural</strong> - 19 de Dezembro
+                        </li>
+                        <li>
+                            <img src="img/eventos/passado2.jpg" alt="Evento Passado 2" class="event-image">
+                            <strong>Live - Tema: O Futuro dos Museus</strong> - 19 de Maio (2021)
+                        </li>
+                    </ul>
+                </div>
             </div>
 
-            <!-- Lista de Eventos Passados -->
-            <div id="past-events" style="display: none;">
-                <h3>Eventos Passados</h3>
-                <ul>
-                    <li>
-                        <img src="img/marau01.jpg" alt="1º Sarau Cultural no Museu Natural" class="event-image">
-                        <strong>1º Sarau Cultural no Museu Natural</strong> - 19 de Dezembro
-                    </li>
-                    <li>
-                        <img src="img/Live01.jpg" alt="Live-sobre-o-futuro-dos-museus-do-baixo-parnaiba" class="event-image">
-                        <strong>Live - Tema: O Futuro Dos Museus Do Baixo Parnaíba</strong> - 19 de Maio (2021)
-                    </li>
-                </ul>
+            <!-- Botões para alternar -->
+            <div class="event-buttons">
+                <button onclick="showEvents('future')">Ver Apenas Futuros</button>
+                <button onclick="showEvents('past')">Ver Apenas Passados</button>
+                <button onclick="showEvents('both')">Ver Ambos</button>
             </div>
         </section>
         
