@@ -211,3 +211,20 @@ function toggleEvents(type) {
         pastEvents.style.display = 'block';
     }
 }
+
+// Função para exibir eventos
+function showEvents(type) {
+    const futureEvents = document.getElementById('future-events');
+    const pastEvents = document.getElementById('past-events');
+
+    if (type === 'future') {
+        futureEvents.style.display = 'block';
+        pastEvents.style.display = 'none';
+    } else if (type === 'past') {
+        futureEvents.style.display = 'none';
+        pastEvents.style.display = 'block';
+    } else if (type === 'both') {
+        futureEvents.style.display = 'block';
+        pastEvents.style.display = 'block';
+    }
+}

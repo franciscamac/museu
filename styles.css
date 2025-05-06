@@ -482,3 +482,67 @@ footer {
         transform: translateX(-100%);
     }
 }
+
+/* Contêiner dos eventos */
+.eventos-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+/* Estilo para as listas de eventos */
+.event-list {
+    flex: 1;
+    overflow-y: auto;
+    max-height: 300px; /* Limita a altura das listas */
+    padding: 1rem;
+    background-color: #F5F5DC; /* Fundo claro */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.event-list h3 {
+    text-align: center;
+    color: #004D40; /* Verde Escuro */
+}
+
+.event-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.event-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.event-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 1rem;
+}
+
+.event-buttons {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.event-buttons button {
+    background-color: #DAA520; /* Dourado Suave */
+    color: #004D40; /* Verde Escuro */
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.event-buttons button:hover {
+    background-color: #F5F5DC; /* Bege Claro */
+    color: #004D40; /* Verde Escuro */
+}
