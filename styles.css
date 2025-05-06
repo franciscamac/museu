@@ -1,30 +1,44 @@
 /* Reset básico */
-body, h1, h2, p, ul {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    padding-top: 60px; /* Para garantir que o conteúdo não fique oculto atrás do menu fixo */
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
 }
 
-/* Cabeçalho fixo */
+/* Corpo principal */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #F5F5DC; /* Fundo principal */
+    color: #2F4F4F; /* Texto principal */
+    line-height: 1.6;
+}
+
+/* Estilo para o cabeçalho */
 header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    background-color: #004d40;
-    color: #fff;
-    padding: 1rem 2rem;
-    z-index: 1000;
+    background-color: #004D40; /* Verde Escuro */
+    color: #F5F5DC; /* Bege Claro */
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem 2rem;
+    z-index: 1000;
+}
+
+/* Estilo para a logo */
+header .logo img {
+    height: 50px; /* Ajuste a altura da logo */
+    width: auto; /* Mantém a proporção da imagem */
+    display: block;
 }
 
 header .logo {
@@ -43,382 +57,231 @@ header .logo {
 
 .nav-links a {
     text-decoration: none;
-    color: #fff;
+    color: #F5F5DC; /* Bege Claro */
     font-weight: bold;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #ffa726;
+    color: #DAA520; /* Dourado Suave */
 }
 
 /* Botão doador */
 .doador-button {
-    background-color: #ffa726;
-    color: #000;
+    background-color: #DAA520; /* Dourado Suave */
+    color: #004D40; /* Verde Escuro */
     padding: 0.5rem 1rem;
     border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
 }
 
 .doador-button:hover {
-    background-color: #ff9800;
+    background-color: #F5F5DC; /* Bege Claro */
+    color: #004D40; /* Verde Escuro */
 }
-#home {
-    text-align: center;
+
+/* Seções */
+section {
     padding: 2rem;
-    background-color: #f9f9f9;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-#home h1 {
+#home {
+    position: relative;
+    display: flex; /* Usa Flexbox para organizar o conteúdo */
+    align-items: center;
+    justify-content: flex-start; /* Posiciona o texto no lado esquerdo */
+    height: 100vh; /* Altura total da janela */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), 
+                url('img/GERAIS/Prancheta 5.png'); /* Adiciona o gradiente e a imagem de fundo */
+    background-size: cover; /* Faz com que a imagem cubra toda a área */
+    background-position: center; /* Centraliza a imagem */
+    color: #F5F5DC; /* Texto claro */
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha o texto no lado esquerdo */
+    max-width: 50%; /* Limita a largura do texto */
+    z-index: 1; /* Garante que o texto fique acima do gradiente */
+}
+
+.home-text {
+    flex: 1; /* Ocupa metade da largura */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.home-text h1 {
     font-size: 2.5rem;
-    color: #004d40;
     margin-bottom: 1rem;
+    text-align: left; /* Alinha o texto à esquerda */
 }
 
-#home p {
+.home-text p {
     font-size: 1.2rem;
-    margin-bottom: 1rem;
-    color: #555;
     line-height: 1.6;
+    text-align: left; /* Alinha o texto à esquerda */
 }
 
-.home-buttons {
-    margin-top: 1.5rem;
-}
-
-.home-buttons .button {
-    display: inline-block;
-    background-color: #004d40;
-    color: #fff;
-    padding: 0.8rem 1.5rem;
-    margin: 0.5rem;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-}
-
-.home-buttons .button:hover {
-    background-color: #00796b;
+/* Overlay opcional para reforçar o gradiente */
+#home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)); /* Gradiente escuro no lado direito */
+    z-index: 0; /* Fica atrás do texto */
 }
 
 .home-image {
-    margin-top: 2rem;
+    flex: 1; /* Ocupa metade da largura */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Garante que a imagem não ultrapasse os limites */
 }
 
 .home-image img {
-    width: 100%;
-    max-width: 800px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-/* Estilos adicionais para o slideshow */
-.slideshow-container {
-    position: relative;
-    max-width: 100%;
-    margin: auto;
-    overflow: hidden;
+    width: 100%; /* Faz a imagem ocupar toda a largura */
+    height: 100%; /* Faz a imagem ocupar toda a altura */
+    object-fit: cover; /* Garante que a imagem seja cortada proporcionalmente */
 }
 
-.slide {
-    display: none;
-    width: 100%;
-    transition: opacity 1s ease-in-out;
-}
-
-.slide.active {
-    display: block;
-    animation: fade 1.5s;
-}
-
-@keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
-}
-
-.slide img {
-    width: 100%;
-    height: auto;
-    max-height: 500px;
-    object-fit: cover;
-}
-
-.slide-caption {
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    right: 0;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px;
-    text-align: center;
-}
-
-.dots {
-    text-align: center;
-    margin-top: 10px;
-}
-
-.dot {
-    height: 15px;
-    width: 15px;
-    margin: 0 5px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-}
-
-.dot.active {
-    background-color: #717171;
-}
-
-/* Estilo para a seção de Eventos */
-#eventos {
-    background-color: #f1f1f1;
+#sobre {
+    display: flex; /* Usa Flexbox para organizar o conteúdo */
+    flex-direction: column; /* Organiza o título e o texto em uma coluna */
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    justify-content: flex-start; /* Posiciona o conteúdo no topo */
+    height: 100vh; /* Altura total da janela */
     padding: 2rem;
-    border-radius: 8px;
+    box-sizing: border-box;
+    background-color: #004D40; /* Fundo verde escuro */
+    color: #F5F5DC; /* Texto claro */
 }
 
-#eventos h2 {
-    color: #004d40;
-    margin-bottom: 1rem;
+.sobre-content {
+    text-align: center; /* Centraliza o texto */
+    max-width: 800px; /* Limita a largura do conteúdo */
+    margin-top: 2rem /* Adiciona espaçamento superior ao contêiner */
 }
 
-#eventos button {
-    background-color: #004d40;
-    color: white;
-    padding: 0.5rem 1rem;
-    margin-right: 1rem;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    font-weight: bold;
+#sobre h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem; /* Espaçamento entre o título e o texto */
+    margin-top: 1rem; /* Adiciona espaçamento acima do título */
+    text-align: center; /* Centraliza o título */
 }
 
-#eventos button:hover {
-    background-color: #ffa726;
+#sobre p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-top: 3rem; 
 }
 
-#eventos ul {
-    list-style-type: none;
-    padding: 0;
+#slideshow {
+    
+    background-color: #F5F5DC; /* Texto claro */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
 }
 
-#eventos li {
+.slideshow-container {
+    width: 100%;
+    max-width: 1080px; /* Ajusta o tamanho máximo do contêiner */
+    height: 100%; /* Faz o contêiner ocupar toda a altura disponível */
+    overflow: hidden; /* Esconde o conteúdo que ultrapassa os limites */
+    position: relative;
+}
+
+.carrossel {
+    position: relative;
     display: flex;
     align-items: center;
-    background-color: #fff;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 100%; /* Garante que o carrossel ocupe toda a altura do contêiner */
 }
 
-#eventos li strong {
-    color: #004d40;
-    margin-left: 1rem;
+.carrossel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Animação suave ao mover o carrossel */
+    gap: 10px; /* Espaçamento entre as imagens */
+    height: 100%; /* Garante que as imagens ocupem toda a altura do contêiner */
 }
 
-.event-image {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 8px;
+.carrossel-item {
+    flex: 0 0 calc(33.33% - 10px); /* Cada item ocupa 1/3 da largura do contêiner, menos o gap */
+    height: auto; /* Ajusta a altura automaticamente */
+    overflow: hidden;
+    border-radius: 10px; /* Bordas arredondadas */
 }
 
-/* Esconder os eventos passados inicialmente */
-#past-events {
-    display: none;
-}
-
-
-/* Esconder os eventos passados inicialmente */
-#past-events {
-    display: none;
-}
-
-#SAMUHNAP {
-    text-align: center;
-    padding: 2rem;
-    background-color: #f9f9f9;
-}
-
-#SAMUHNAP h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-#SAMUHNAP .logo-samuhnap {
-    display: block; /* Garante que a imagem fique em uma linha separada */
-    margin: 0 auto 1rem auto; /* Centraliza a logo e adiciona espaço inferior */
-    max-width: 300px; /* Limita o tamanho da logo */
-    height: auto; /* Mantém a proporção da imagem */
-}
-.logo-text-container {
-    display: flex; /* Organiza os elementos horizontalmente */
-    align-items: center; /* Alinha verticalmente ao centro */
-    gap: 1rem; /* Espaço entre a logo e o texto */
-    margin-bottom: 1rem; /* Espaço inferior para separar do próximo parágrafo */
-}
-
-.logo-samuhnap {
-    max-width: 100px; /* Controla o tamanho da logo */
-    height: auto; /* Mantém a proporção da logo */
-}
-
-.logo-text-container p {
-    margin: 0; /* Remove margens extras do parágrafo */
-    font-size: 1.1rem; /* Ajuste o tamanho do texto, se necessário */
-}
-
-#SAMUHNAP p {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-}
-
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    justify-items: center;
-}
-
-.team-card {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1rem;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.team-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.team-card img {
-    width: 100%;
-    height: auto;
-    max-width: 250px;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-}
-
-.team-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    color: #333;
-}
-
-.team-card p {
-    font-size: 0.9rem;
-    color: #777;
-}
-/* Estilos para o lightbox */
-.lightbox {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    top: 0;
-    left: 0;
+.carrossel-item img {
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    text-align: center;
+    object-fit: cover; /* Garante que a imagem seja cortada proporcionalmente */
 }
 
-.lightbox-content {
-    display: inline-block;
-    max-width: 90%;
-    max-height: 90%;
-    margin-top: 5%;
-    position: relative;
-}
-
-.lightbox-img {
-    max-width: 100%;
-    max-height: 80vh;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
-
-.lightbox-caption {
-    color: white;
-    margin-top: 15px;
-    font-size: 1.2rem;
-}
-
-.close-lightbox {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: white;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.close-lightbox:hover {
-    color: #ccc;
-}
-
-.prev, .next {
-    cursor: pointer;
+button.prev, button.next {
     position: absolute;
     top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
     color: white;
-    font-weight: bold;
-    font-size: 28px;
-    transition: 0.3s;
-    user-select: none;
-}
-
-.next {
-    right: 30px;
-}
-
-.prev {
-    left: 30px;
-}
-
-.prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    z-index: 10;
     border-radius: 50%;
 }
 
-/* Adiciona cursor pointer para os cards da equipe */
-.team-card {
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+button.prev:hover, button.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Botões gerais */
+button {
+    background-color: #DAA520; /* Dourado Suave */
+    color: #004D40; /* Verde Escuro */
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-
-/* Seções */
-main {
-    padding: 2rem;
-}
-
-/* Seção do conteúdo */
-section {
-    min-height: 600px; /* Altura mínima de 600px */
-    height: auto;
-}
-
-h1, h2 {
-    color: #004d40;
+button:hover {
+    background-color: #F5F5DC; /* Bege Claro */
+    color: #004D40; /* Verde Escuro */
 }
 
 /* Rodapé */
 footer {
+    background-color: #004D40; /* Verde Escuro */
+    color: #F5F5DC; /* Bege Claro */
     text-align: center;
     padding: 1rem;
-    background-color: #004d40;
-    color: #fff;
     margin-top: 2rem;
 }
